@@ -21,7 +21,7 @@ login = {
 }
   loginClick(){
     // const headers = { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' };
-    return this.http.post('http://pg13sql.anykeeps.com/Account/Login',this.login)
+    return this.http.post('http://pg13sql.anykeeps.com/healthnextapi2/Account/Login',this.login)
     .subscribe(
         res =>{
             console.log(res);
