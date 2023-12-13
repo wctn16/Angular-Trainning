@@ -1,29 +1,41 @@
-<style>
-  .dx-card {
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    border-radius: 4px;
-    background-color: #fffff5;
-    margin: 2px 2px 3px;
-    width: 500px ;
-    height: 200px;
-    padding: 40px;
-  }
-</style>
+<div class="screen-1">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="text-center">
+        <span class="headline">Login</span>
+      </div>
+      <dx-form>
+        <!-- <div class="uaername"> -->
+        <dxi-item name="username" dataField="Username ">
+          <dxi-validation-rule
+            type="required"
+            message="Username is required"
+          ></dxi-validation-rule>
+          <dx-text-box
+            class="username"
+            type="text"
+            [(ngModel)]="login.UserName"
+          ></dx-text-box>
+        </dxi-item>
 
-
-
- <div class="dx-card">
-  <dx-form >
-    <dxi-item for="username" dataField="username" editorType="dxTextBox">
-      <dxi-validation-rule type="required" message="Username is required"></dxi-validation-rule>
-      <dxi-validation-rule type="text" message="Email is invalid"></dxi-validation-rule>
-    </dxi-item>
-
-    <dxi-item for="password" dataField="password" editorType="dxTextBox">
-      <dxi-validation-rule type="required" message="Password is required"></dxi-validation-rule>
-      <dxi-validation-rule type="password" message="Password is required"></dxi-validation-rule>
-    </dxi-item>
-
-    </dx-form><dx-button  (click)= "loginClick()" >Submit</dx-button><br>
-    <dx-button ><a href="/register">Create Account!</a></dx-button></div>
+        <dxi-item name="password" for="password" dataField="Password">
+          <dxi-validation-rule
+            type="required"
+            message="Password is required"
+          ></dxi-validation-rule>
+          <dx-text-box
+            class="password"
+            type="password"
+            [(mode)]="passwordMode"
+            [(ngModel)]="login.Password"
+          ></dx-text-box>
+        </dxi-item>
+      </dx-form>
+      <div class="button">
+        <dx-button class="login" (click)="onSubmit()">Login</dx-button>
+      </div>
+      <div class="footer"><a href="/register">Create Account!</a></div>
+    </div>
+  </div>
+</div>
+<div></div>

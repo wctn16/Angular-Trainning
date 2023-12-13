@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-export class Employee {
+export class Customer {
   ID?: number;
   FirstName?: string;
   LastName?: string;
@@ -18,7 +18,8 @@ export class Employee {
   Skype?: string;
 }
 
-const employee: Employee = {
+
+const customer: Customer[] = [{
   ID: 1,
   FirstName: 'John',
   LastName: 'Heart',
@@ -34,7 +35,89 @@ const employee: Employee = {
   Mobile: '555-684-1335',
   Email: 'jheart@dx-email.com',
   Skype: 'jheart_DX_skype',
-};
+}
+, {
+  ID: 2,
+  FirstName: 'John',
+  LastName: 'Heart',
+  Position: 'CEO',
+  BirthDate: '1964/03/16',
+  HireDate: '1995/01/15',
+  Notes: 'John has been in the Audio/Video industry since 1990. He has led DevAV as its CEO since 2003.\r\nWhen not working hard as the CEO, John loves to golf and bowl. He once bowled a perfect game of 300.',
+  Address: '351 S Hill St.',
+  City: 'Los Angeles',
+  State: 'CA',
+  ZipCode: '90013',
+  Home: '555-684-1334',
+  Mobile: '555-684-1335',
+  Email: 'jheart@dx-email.com',
+  Skype: 'jheart_DX_skype',
+}, {
+  ID: 3,
+  FirstName: 'John',
+  LastName: 'Heart',
+  Position: 'CEO',
+  BirthDate: '1964/03/16',
+  HireDate: '1995/01/15',
+  Notes: 'John has been in the Audio/Video industry since 1990. He has led DevAV as its CEO since 2003.\r\nWhen not working hard as the CEO, John loves to golf and bowl. He once bowled a perfect game of 300.',
+  Address: '351 S Hill St.',
+  City: 'Los Angeles',
+  State: 'CA',
+  ZipCode: '90013',
+  Home: '555-684-1334',
+  Mobile: '555-684-1335',
+  Email: 'jheart@dx-email.com',
+  Skype: 'jheart_DX_skype',
+}, {
+  ID: 4,
+  FirstName: 'John',
+  LastName: 'Heart',
+  Position: 'CEO',
+  BirthDate: '1964/03/16',
+  HireDate: '1995/01/15',
+  Notes: 'John has been in the Audio/Video industry since 1990. He has led DevAV as its CEO since 2003.\r\nWhen not working hard as the CEO, John loves to golf and bowl. He once bowled a perfect game of 300.',
+  Address: '351 S Hill St.',
+  City: 'Los Angeles',
+  State: 'CA',
+  ZipCode: '90013',
+  Home: '555-684-1334',
+  Mobile: '555-684-1335',
+  Email: 'jheart@dx-email.com',
+  Skype: 'jheart_DX_skype',
+}, {
+  ID: 5,
+  FirstName: 'John',
+  LastName: 'Heart',
+  Position: 'CEO',
+  BirthDate: '1964/03/16',
+  HireDate: '1995/01/15',
+  Notes: 'John has been in the Audio/Video industry since 1990. He has led DevAV as its CEO since 2003.\r\nWhen not working hard as the CEO, John loves to golf and bowl. He once bowled a perfect game of 300.',
+  Address: '351 S Hill St.',
+  City: 'Los Angeles',
+  State: 'CA',
+  ZipCode: '90013',
+  Home: '555-684-1334',
+  Mobile: '555-684-1335',
+  Email: 'jheart@dx-email.com',
+  Skype: 'jheart_DX_skype',
+}, {
+  ID: 6,
+  FirstName: 'John',
+  LastName: 'Heart',
+  Position: 'CEO',
+  BirthDate: '1964/03/16',
+  HireDate: '1995/01/15',
+  Notes: 'John has been in the Audio/Video industry since 1990. He has led DevAV as its CEO since 2003.\r\nWhen not working hard as the CEO, John loves to golf and bowl. He once bowled a perfect game of 300.',
+  Address: '351 S Hill St.',
+  City: 'Los Angeles',
+  State: 'CA',
+  ZipCode: '90013',
+  Home: '555-684-1334',
+  Mobile: '555-684-1335',
+  Email: 'jheart@dx-email.com',
+  Skype: 'jheart_DX_skype',
+}]
+
 
 const positions: string[] = [
   'HR Manager',
@@ -50,8 +133,26 @@ const states: string[] = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 
 
 @Injectable()
 export class Service {
+  static DataSource(): import("devextreme/data/data_source").default<any, any> {
+    throw new Error('Method not implemented.');
+  }
+  static getDataSource(): import("devextreme/data/data_source").default<any, any> {
+    throw new Error('Method not implemented.');
+  }
+  getDataSource(): import("devextreme/data/data_source").default<any, any> {
+    throw new Error('Method not implemented.');
+  }
+  getCountries(): string[] {
+    throw new Error('Method not implemented.');
+  }
+  getCustomer(): any {
+    throw new Error('Method not implemented.');
+  }
+  getCities(): any {
+    throw new Error('Method not implemented.');
+  }
   getEmployee() {
-    return employee;
+    return customer;
   }
 
   getPositions() {

@@ -11,20 +11,27 @@ import {  Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  passwordMode: string;
   public loginForm!: FormGroup
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient,private router: Router) {
+    this.passwordMode = 'password'
+  }
 
 login = {
-    "OrganizationId": 1,
-    "UserName": "sysadmin",
-    "Password": "SpApp@09",
+  OrganizationId: 1,
+    UserName: "",
+    Password: "",
 }
-  loginClick(){
-    // const headers = { 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' };
-    return this.http.post('http://pg13sql.anykeeps.com/healthnextapi2/Account/Login',this.login)
-    .subscribe(
-        res =>{
-            console.log(res);
+  onSubmit(){
+    const apiURL = 'http://pg13sql.anykeeps.com/healthnextapi2/Account/Login'
+    this.http.post<any>(apiURL,this.login)
+    .subscribe(response =>{
+      console.log(response)
+            if(this.login == response ){
+              alert(response.Message)
+            }else{
+              alert(response.Message)
+            }
         },
         err => {
             console.log(err.message);
